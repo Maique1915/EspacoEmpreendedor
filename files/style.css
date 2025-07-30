@@ -1,0 +1,2069 @@
+/* --- GERAL & VARIÁVEIS --- */
+:root {
+    --dark-bg: #1e1e1e;
+    --header-bg: #1e232b;
+    --primary-green: #269f51;
+    --primary-gray: #1e232b;
+    --primary-blue: #115297;
+    --menu-light: #f0f0f0;
+    --menu-dark: #333;
+    --text-light: #f0f0f0;
+    --text-dark: #333;
+    --text-ballon-1: #f0f0f0;
+    --text-ballon-2: #1e232b;
+    --text-muted: #888;
+    --orange-accent: #362d26;
+    --orange-accent-hover: #3a291c;
+    --border-color: #e0e0e0;
+    --menu:rgba(250, 250, 255, 0.5);
+    --balao-1:#1e232b;;
+    --balao-2:#28a454;;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    margin: 0 auto;
+    /*padding: 0 20px;*/
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.main-nav-container.container {
+    background-image: url("images/espaço-empreendedor_color.png");
+    background-size: contain; /* ou 'cover', dependendo do efeito desejado */
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    width: 200px;   /* ajuste conforme necessário */
+    height: 100px;  /* ajuste conforme necessário */
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- CABEÇALHO --- */
+/* VERSÃO NOVA (COPIE E COLE ESTA) */
+#main-header {
+background-color: var(--menu); /* branco com 80% de opacidade */
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--menu);
+    position: sticky;
+    padding: 20px;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.top-bar {
+    background-color: #333;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    padding: 8px 0;
+
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav ul, .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-nav a:hover {
+    color: var(--primary-green);
+}
+
+.social-icons a {
+    font-size: 1rem;
+}
+
+.main-nav {
+    right: -100%; /* Começa fora da tela */
+    transition: right 0.4s ease-in-out;
+}
+
+
+
+.main-nav-container .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: var(--text-dark);
+    font-weight: 600;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.main-nav a.active, .main-nav a:hover {
+    color: var(--primary-green);
+}
+
+.nav-item.active > a {
+  color: var(--primary-green);
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-green);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after, .main-nav a.active::after {
+    width: 100%;
+}
+
+.search-icon {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+/* --- HERO SECTION --- */
+.hero {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* --- CONTEÚDO DA PÁGINA --- */
+.page-content {
+    padding: 60px 20px;
+}
+
+.program-section {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 80px;
+    
+}
+
+.program-section.layout-reversed {
+    flex-direction: row-reverse;
+}
+
+.program-image, .program-text {
+    flex: 1;
+}
+
+.program-image img {
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.program-text h2 {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+.program-text h2 a:hover {
+    color: var(--primary-green);
+}
+
+
+.program-text p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.features-list {
+    list-style: none;
+}
+
+.features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.features-list i {
+    color: var(--primary-green);
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+.feature-text h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.feature-text p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0;
+}
+
+.section-title-wrapper {
+    text-align: center;
+    margin: 80px 0;
+    color: var(--primary-green);
+}
+h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.section-title-wrapper h2 {
+    display: inline-block;
+    border-bottom: 3px solid var(--primary-green);
+    padding-bottom: 10px;
+}
+
+/* --- ESTILIZAÇÃO PARA O FORMULÁRIO COM FUNDO GRADIENTE --- */
+
+/* 1. O Contêiner Principal */
+.contact-form-container {
+    /* O gradiente inspirado na sua imagem: do azul escuro para o laranja */
+    background-image: linear-gradient(to bottom right, #2c3e50, #b86835);
+    padding: 50px 40px; /* Adiciona espaçamento interno */
+    color: #f0f0f0;      /* Muda a cor padrão do texto para um branco suave */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* 2. O Título da Seção */
+.contact-form-container h2 {
+    text-align: center;    /* Centraliza o título */
+    color: #ffffff;        /* Garante que o título seja branco puro */
+    margin-bottom: 30px;
+}
+
+/* 3. Os Campos de Input e Textarea */
+.contact-form-container input,
+.contact-form-container textarea {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente "glass" */
+    border: 1px solid rgba(255, 255, 255, 0.4);   /* Borda branca sutil */
+    color: #ffffff;                                /* Cor do texto digitado */
+    border-radius: 5px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+/* 4. O Texto de Placeholder (ex: "Nome", "E-mail") */
+.contact-form-container input::placeholder,
+.contact-form-container textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Cor do placeholder um pouco mais transparente */
+}
+
+/* 5. Efeito ao Clicar no Campo (Focus) */
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+    outline: none; /* Remove a borda azul padrão do navegador */
+    border-color: #ffffff; /* Deixa a borda branca e sólida */
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2); /* Adiciona um brilho suave */
+}
+
+/* 6. O Botão (se ele precisar de ajuste) */
+/* O seu botão .cta-button provavelmente já se destaca, mas este ajuste pode ajudar */
+.contact-form-container .cta-button {
+    width: 100%;
+    max-width: 300px; /* Define um tamanho máximo para o botão */
+    margin: 0 auto; /* Centraliza o botão dentro do .form-submit */
+    display: block;
+}
+
+/* --- SEÇÃO CTA (ESTILO MODERNO E COESO) --- */
+.cta-section {
+    /* Usamos o mesmo gradiente do novo design, mas com uma textura sutil de linhas diagonais por cima */
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(0, 0, 0, 0.04) 10px,
+            rgba(0, 0, 0, 0.04) 12px
+        ),
+        linear-gradient(to right, #2c3e50, #b86835);
+    
+    color: var(--text-light);
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 12px; /* Adiciona bordas arredondadas para consistência */
+    margin: 60px 0; /* Adiciona margem para respirar */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+    position: relative;
+    overflow: hidden; /* Garante que elementos internos não vazem */
+}
+
+/* Título principal do CTA */
+.cta-section h2 {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra no texto para legibilidade */
+}
+
+/* Estilo para um parágrafo de apoio, caso você queira adicionar um */
+.cta-section p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 35px auto;
+    opacity: 0.9;
+}
+
+/* O botão de ação */
+.cta-button {
+    background-color: var(--orange-accent);
+    color: #fff;
+    padding: 15px 40px; /* Mais espaçamento horizontal */
+    border-radius: 50px; /* Botão em formato de pílula, mais moderno */
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil no botão */
+    transition: all 0.3s ease; /* Transição para todas as propriedades */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.cta-button:hover {
+    background-color: var(--orange-accent-hover); /* Uma cor um pouco mais clara e vibrante no hover */
+    transform: translateY(-5px) scale(1.05); /* Levanta e aumenta um pouco */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+}
+/* --- RODAPÉ --- */
+.footer {
+    background-color: var(--dark-bg);
+    color: var(--text-muted);
+    padding: 40px 40px 0 40px;
+    font-size: 0.9rem;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.footer-logo {
+    max-width: 120px;
+}
+
+.footer-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.footer-row ul{
+    min-width: 85px;
+}
+
+#footer-col-0{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#footer-col-1{
+    padding: 0 50px 0  50px;
+}
+
+
+.footer-col .address {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.footer h3 {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer a:hover {
+    color: var(--primary-green);
+}
+
+/* --- ESTILOS ADICIONAIS PARA NOVO CONTEÚDO --- */
+
+/* Seção de texto "O que é" */
+.info-section-alt {
+    background-color: #f9f9f9; /* Fundo sutil para diferenciar */
+}
+
+.info-text-full {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info-text-all {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.info-text-full h2, .info-text-all h2 {
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.info-text-full p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Ajustes para os cards de Missão, Visão e Valores */
+.program-card .card-content h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-green);
+}
+
+.program-card .card-content h3 i {
+    font-size: 1.2rem;
+}
+
+.values-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.values-list li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.values-list li::before {
+    content: '\f00c'; /* Ícone de check do Font Awesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--primary-green);
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+/* Seção de Mensagens (Balões) */
+.messages-section {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.messages-section .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.message-balloon {
+    background-color: var(--balao-1);
+    color: var(--text-light);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 75%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.message-balloon.align-right {
+    align-self: flex-end; /* Alinha o balão à direita */
+    background-color: var(--balao-2);
+}
+
+.message-balloon blockquote {
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.message-balloon footer {
+    margin-top: 15px;
+    font-weight: 600;
+    font-style: normal;
+    text-align: right;
+    color: var(--text-ballon-1);
+    opacity: 0.8;
+}
+
+.message-balloon.align-right footer {
+    color: var(--text-ballon-2); /* Cor do texto do footer no balão verde */
+}
+
+/* "Cauda" do balão de mensagem */
+.message-balloon::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+/* Cauda do balão da esquerda (cinza) */
+.message-balloon:not(.align-right)::after {
+    bottom: -15px;
+    left: 40px;
+    border-width: 15px 15px 0 15px;
+    border-color: var(--balao-1) transparent transparent transparent;
+}
+
+/* Cauda do balão da direita (verde) */
+.message-balloon.align-right::after {
+    bottom: -15px;
+    right: 40px;
+    border-width: 15px 15px 0 15px;
+    border-color: var(--balao-2) transparent transparent transparent;
+}
+
+/* Responsividade para os balões */
+@media (max-width: 768px) {
+    .message-balloon {
+        max-width: 100%;
+    }
+    .message-balloon.align-right {
+        align-self: initial; /* Remove o alinhamento em telas pequenas */
+    }
+}
+
+/* --- ANIMAÇÕES DIRECIONAIS PARA OS CARDS --- */
+
+/* 
+  Estado inicial para todos os elementos que serão animados.
+  Eles começam transparentes e com uma transição suave definida.
+*/
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 
+  Define a posição inicial (fora da tela) para cada direção.
+*/
+.animate-on-scroll[data-animation="from-left"] {
+  transform: translateX(-50px);
+}
+
+.animate-on-scroll[data-animation="from-right"] {
+  transform: translateX(50px);
+}
+
+.animate-on-scroll[data-animation="from-bottom"] {
+  transform: translateY(50px);
+}
+
+/* 
+  Estado final: quando o JavaScript adiciona a classe .is-visible,
+  o elemento se torna opaco e volta à sua posição original (transform: translate(0)).
+*/
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+/* --- BOTÃO VOLTAR AO TOPO --- */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-green);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: scale(1.1);
+}
+
+/* --- ANIMAÇÃO EXCLUSIVA PARA OS BALÕES DE MENSAGEM --- */
+
+/* 
+  Define o estado inicial dos balões ANTES da animação.
+  Eles começam invisíveis, pequenos (scale(0.3)) e com uma transição suave definida.
+*/
+.animate-balloon {
+  opacity: 0;
+  transform: scale(0.3);
+  transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 
+  Move o balão da esquerda para uma posição inicial à esquerda.
+  A transformação combina a escala com o deslocamento.
+*/
+.animate-balloon:not(.align-right) {
+  transform: scale(0.3) translateX(-100px);
+}
+
+/* 
+  Move o balão da direita para uma posição inicial à direita.
+*/
+.animate-balloon.align-right {
+  transform: scale(0.3) translateX(100px);
+}
+
+/* 
+  Estado FINAL: quando o JavaScript adiciona a classe .is-visible.
+  O balão se torna 100% opaco e volta para sua posição e tamanho originais.
+*/
+.animate-balloon.is-visible {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+}
+
+/* --- ANIMAÇÃO PARA SEÇÕES COM IMAGEM E TEXTO LADO A LADO --- */
+
+/* 
+  Define o estado inicial dos filhos (imagem e texto) da nossa seção.
+  Eles começam invisíveis e com uma transição suave preparada.
+*/
+.animate-slide-in-pair > .program-image,
+.animate-slide-in-pair > .program-text {
+  opacity: 0;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* 
+  Posição inicial para o layout padrão (imagem na esquerda, texto na direita)
+*/
+.animate-slide-in-pair:not(.layout-reversed) > .program-image {
+  transform: translateX(-50px); /* Começa 50px à esquerda */
+}
+.animate-slide-in-pair:not(.layout-reversed) > .program-text {
+  transform: translateX(50px);  /* Começa 50px à direita */
+}
+
+/* 
+  Posição inicial para o layout REVERSO (imagem na direita, texto na esquerda)
+*/
+.animate-slide-in-pair.layout-reversed > .program-image {
+  transform: translateX(50px);  /* Começa 50px à direita */
+}
+.animate-slide-in-pair.layout-reversed > .program-text {
+  transform: translateX(-50px); /* Começa 50px à esquerda */
+}
+
+/* 
+  Estado FINAL: Quando a seção-pai (.animate-slide-in-pair) recebe a classe .is-visible,
+  seus filhos (imagem e texto) se tornam visíveis e voltam para a posição original.
+*/
+.animate-slide-in-pair.is-visible > .program-image,
+.animate-slide-in-pair.is-visible > .program-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 992px) {
+    .program-section, .program-section.layout-reversed {
+        flex-direction: column;
+    }
+}
+
+/* =============================================== */
+/* === SEÇÃO RESPONSIVA COMPLETA E CORRIGIDA === */
+/* =============================================== */
+
+/* 1. Botão do Menu Hambúrguer */
+.mobile-nav-toggle {
+    display: none; 
+    background: transparent;
+    border: none;
+    color: var(--menu-dark);
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 9999; 
+    transition: transform 0.5s ease; /* Adiciona transição para a rotação */
+
+}
+
+.mobile-nav-toggle .icon-close {
+    display: none;
+}
+
+.nav-open .mobile-nav-toggle .icon-close {
+    display: block;
+    color: var(--menu-light);
+
+    transform: rotate(360deg); /* Rotação completa */
+}
+
+.nav-open .mobile-nav-toggle .icon-hamburger {
+    display: none;
+}
+
+.mobile-nav-toggle i {
+    color: var(--text-dark);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.mobile-nav-toggle .icon-close {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+.mobile-nav-toggle .icon-hamburger {
+    opacity: 1;
+}
+.nav-open .mobile-nav-toggle .icon-close {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(360deg);
+}
+.nav-open .mobile-nav-toggle .icon-hamburger {
+    opacity: 0;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* 2. Media Query para telas de até 992px (tablets e mobile) */
+@media (max-width: 992px) {
+    .program-section, .program-section.layout-reversed {
+        flex-direction: column;
+    }
+    .info-section .container, .events-section .container {
+        flex-direction: column;
+    }
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* 3. Media Query para telas de até 768px (foco no menu mobile) */
+@media (max-width: 768px) {
+    /* Mostra o botão do menu hambúrguer */
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    /* Estiliza o menu principal para o modo móvel */
+  /* Dentro de @media (max-width: 768px) { ... } */
+
+    /* Ajusta a lista de links para ser vertical */
+    .main-nav ul {
+        flex-direction: column;
+        align-items: stretch; /* Faz os itens ocuparem toda a largura */
+        gap: 0; /* Removemos o gap para o fundo ficar contínuo */
+        width: 100%;
+    }
+
+    /* Estiliza os links do menu mobile */
+    .main-nav a {
+        color: var(--text-light);
+        display: block; /* Faz o link ocupar toda a área do item da lista */
+        padding: 15px 30px; /* Adiciona espaçamento interno para toque */
+        font-size: 1.1rem;
+        text-align: center;
+        transition: background-color 0.5s ease; /* Transição suave para o fundo */
+    }
+
+    /* EFEITO HOVER: Fundo sutil ao passar o mouse */
+    .main-nav a:hover {
+        color: var(--primary-green);
+    }
+    
+    .main-nav.nav-active {
+        right: 0;
+    }
+    
+    .main-nav a::after {
+        display: none;
+    }
+
+    /* Impede o scroll da página quando o menu estiver aberto */
+    .body-no-scroll {
+        overflow: hidden;
+    }
+
+    /* Outros ajustes responsivos do seu CSS original */
+    .top-bar .container { flex-direction: column; gap: 10px; }
+    .hero h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    footer .container {
+        grid-template-columns: 1fr 1fr;
+    }
+    #footer-col-1 {
+        grid-column: 1 / -1; 
+        text-align: center;
+    }
+    .footer-logo { margin-left: auto; margin-right: auto; }
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-slider { height: 50vh; }
+    .counters { justify-content: center; }
+}
+
+/* 4. Media Query para telas muito pequenas */
+@media (max-width: 480px) {
+     footer .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    footer ul { padding-left: 0; }
+}
+
+/* --- ESTILOS PARA O MENU RESPONSIVO --- */
+
+/* 1. Botão do Menu Hambúrguer */
+.mobile-nav-toggle {
+    display: none; /* Escondido por padrão (em telas grandes) */
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.8rem; /* Tamanho do ícone */
+    cursor: pointer;
+    z-index: 9999; /* Garante que fique acima de tudo */
+}
+
+/* Esconde o ícone de fechar por padrão */
+.mobile-nav-toggle .icon-close {
+    display: none;
+}
+
+/* Mostra o ícone de fechar quando o menu está aberto */
+.nav-open .mobile-nav-toggle .icon-close {
+    display: block;
+}
+
+/* Esconde o ícone de hambúrguer quando o menu está aberto */
+.nav-open .mobile-nav-toggle .icon-hamburger {
+    display: none;
+}
+
+/* Texto para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* 2. Media Query - A Mágica da Responsividade (para telas até 768px) */
+@media (max-width: 768px) {
+    /* Mostra o botão do menu hambúrguer */
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    /* Estiliza o menu principal para o modo móvel */
+    .main-nav {
+        /* Transforma em um painel que desliza da direita */
+        position: fixed;
+        top: 0;
+        right: -100%; /* Começa fora da tela */
+        width: 80%;
+        max-width: 320px;
+        height: 100vh; /* Altura total da tela */
+        background-color: var(--header-bg);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        padding-top: 120px; /* Espaço para não ficar atrás do header */
+        transition: right 0.4s ease-in-out;
+        z-index: 9998;
+    }
+
+    /* Classe que o JavaScript vai adicionar para mostrar o menu */
+    .main-nav.nav-active {
+        right: 0;
+    }
+
+    /* Ajusta a lista de links para ser vertical */
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .main-nav a {
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte para toque */
+    }
+    
+    /* Remove o sublinhado animado no mobile para não confundir */
+    .main-nav a::after {
+        display: none;
+    }
+
+    /* Impede o scroll da página quando o menu estiver aberto */
+    .body-no-scroll {
+        overflow: hidden;
+    }
+}
+
+/* --- ADIÇÕES PARA A PÁGINA HOME --- */
+
+/* Hero Slider */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Altura do slider */
+    overflow: hidden;
+}
+.slides-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end; /* Alinha conteúdo na base */
+    justify-content: flex-start; /* Alinha conteúdo à esquerda */
+    padding: 50px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.slide.active {
+    opacity: 1;
+}
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+}
+.slide-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    max-width: 600px;
+}
+.slide-content h2 {
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.slide-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.slide-button {
+    background-color: var(--orange-accent);
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    display: inline-block;
+}
+.slide-button:hover {
+    background-color: #e65c00;
+}
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+    transition: background-color 0.3s;
+}
+.slider-nav:hover {
+    background: rgba(0,0,0,0.8);
+}
+.slider-nav.prev { left: 20px; }
+.slider-nav.next { right: 20px; }
+.slider-pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 3;
+}
+.pagination-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.pagination-dot.active {
+    background: #fff;
+}
+
+.hero-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Logo sobre o carrossel */
+.slider-overlay-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 40%;
+    opacity: 0.9;
+    z-index: 10;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8));
+}
+
+/* Filtro azul sobre cada slide */
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 100, 255, 0.3); /* azul com transparência */
+    z-index: 1;
+}
+
+/* Conteúdo acima do filtro */
+.slide-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Certifique-se de que .slide está posicionada */
+.slide {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/* Logos dos Programas */
+.program-logos {
+    background-color: #f9f9f9;
+    padding: 20px 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.program-logos .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    padding-top: 20px;
+}
+.program-logos img {
+    max-height: 60px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+.program-logos a:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Seção de Informações (Lugar de fazer e acontecer) */
+.info-section { padding: 80px 0; }
+.info-section .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.info-text, .info-image { flex: 1; }
+.info-text h2 {
+    margin-bottom: 20px;
+}
+.info-text .features-list {
+    margin-top: 20px;
+}
+.info-text .features-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #555;
+}
+.info-text .features-list i {
+    color: var(--primary-green);
+}
+.info-image img {
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Vale Infográfico */
+.vale-infographic-section {
+    background: linear-gradient(to right, var(--primary-green), #00a068);
+    color: #fff;
+    padding: 60px 0;
+}
+.vale-infographic-content {
+    text-align: center;
+}
+.vale-infographic-content img {
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+}
+.cta-button.inverted {
+    background-color: #fff;
+    color: var(--primary-green);
+}
+.cta-button.inverted:hover {
+    background-color: #f0f0f0;
+}
+
+/* Grid de Cards (Programas e Notícias) */
+.section-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+}
+.news-section { padding: 80px 0; }
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.program-card, .news-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.6s, box-shadow 0.6s, border-color 0.6s;
+}
+.program-card:hover, .news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: var(--primary-green);
+}
+
+.card-content {
+    padding: 20px;
+}
+.card-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+.news-meta {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+.read-more {
+    font-weight: 600;
+    color: var(--primary-green);
+}
+.view-more-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+/* Seção Eventos */
+.events-section {
+    background-color: #f0f8ff; /* AliceBlue */
+    padding: 80px 0;
+    overflow: hidden;
+}
+.events-section .container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.events-text, .events-image { flex: 1; }
+.events-text h2 {
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.events-text h2 span {
+    color: var(--primary-green);
+}
+.counters {
+    display: flex;
+    gap: 30px;
+    margin: 40px 0;
+}
+.counter-item {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--orange-accent);
+}
+.counter-item p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+.events-buttons {
+    display: flex;
+    gap: 20px;
+}
+.events-image img {
+    border-radius: 50%;
+}
+
+
+/* Seção Patrocinadores */
+.sponsors-section { padding: 80px 0; background-color: #f9f9f9; }
+.sponsors-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 50px;
+}
+.sponsors-grid img {
+    max-height: 50px;
+    filter: grayscale(100%);
+    opacity: 0.8;
+}
+
+/* Final CTA */
+.final-cta {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://agenciacuritiba.com.br/wp-content/uploads/2025/01/cultura-inovacao.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 80px 20px;
+    color: #fff;
+}
+.final-cta h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+.final-cta h2 {
+    margin: 10px 0 30px 0;
+}
+
+/* --- RESPONSIVIDADE ADICIONAL --- */
+@media(max-width: 992px) {
+    .info-section .container, .events-section .container {
+        flex-direction: column;
+    }
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-slider { height: 50vh; }
+    .counters { justify-content: center; }
+}
+
+/* --- ADIÇÕES PARA A PÁGINA "O QUE FAZEMOS" --- */
+
+/* Submenu */
+.submenu {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #e0e0e0;
+}
+.submenu .container {
+    display: flex;
+    justify-content: center;
+}
+.submenu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.submenu li a {
+    display: block;
+    padding: 15px 25px;
+    font-weight: 600;
+    color: var(--text-muted);
+    position: relative;
+    transition: color 0.3s;
+}
+.submenu li a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; /* Para alinhar com a borda do .submenu */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-green);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.submenu li a.active, .submenu li a:hover {
+    color: var(--primary-green);
+}
+.submenu li a.active::after, .submenu li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Seções Missão, Visão e Valores */
+.mission-vision-section {
+    padding: 40px 0;
+}
+.mission-vision-item {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.mission-vision-item.layout-reversed {
+    flex-direction: row-reverse;
+}
+.item-image, .item-text {
+    flex: 1;
+}
+.item-image img {
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.item-text h2 {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+.item-text p {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.values-section {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+}
+.values-section .container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+.values-image, .values-text {
+    flex: 1;
+}
+.values-image img {
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.values-text h2 {
+    margin-bottom: 20px;
+}
+.values-text .features-list li {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Seção História (Timeline Slider) */
+.history-section {
+    padding: 80px 0;
+}
+.timeline-slider {
+    position: relative;
+    overflow: hidden;
+    padding: 0 40px; /* Espaço para as setas */
+}
+.timeline-slides-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.timeline-slide {
+    flex: 0 0 33.33%; /* Mostra 3 slides por vez */
+    padding: 0 15px;
+}
+.timeline-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.timeline-content {
+    padding: 20px;
+}
+.timeline-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+.timeline-content p {
+    font-size: 0.9rem;
+    color: #666;
+}
+.timeline-navigation {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none; /* Apenas o contêiner, os botões terão pointer-events */
+}
+.timeline-nav-btn {
+    background: var(--primary-green);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    pointer-events: all;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.timeline-nav-btn:hover {
+    background-color: #00a068;
+    transform: scale(1.1);
+}
+
+/* Responsividade adicional para a página "O que fazemos" */
+@media (max-width: 992px) {
+    .mission-vision-item, .mission-vision-item.layout-reversed,
+    .values-section .container {
+        flex-direction: column;
+    }
+    .timeline-slide {
+        flex: 0 0 50%; /* Mostra 2 slides */
+    }
+}
+@media (max-width: 768px) {
+    .timeline-slide {
+        flex: 0 0 100%; /* Mostra 1 slide */
+    }
+}
+
+/* --- ADIÇÕES PARA A PÁGINA "PROJETOS" --- */
+
+.coming-soon {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--orange-accent);
+    display: inline-block;
+    margin-top: -10px;
+}
+
+/* --- ESTILOS PARA O MODAL (POPUP) --- */
+
+.quick-link-card {
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+    padding: 0;
+}
+
+.modal-body h4 {
+    font-size: 1.2rem;
+    color: var(--primary-green);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.modal-body p, .modal-body li {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.modal-body ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.modal-body a {
+    color: var(--primary-green);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.modal-body a:hover {
+    text-decoration: none;
+}
+/* --- ADIÇÕES PARA A PÁGINA "EDITAIS & LICITAÇÕES" --- */
+
+/* Seção de Introdução */
+.intro-licitacoes, .intro-externo {
+    background-image: linear-gradient(to bottom right, #2c3e50, #b86835);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.eyebrow-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+.intro-licitacoes h1, .intro-externo h1 {
+    font-size: 2.5rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+.intro-licitacoes h5, .intro-externo h5 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+/* Seção das Tabelas */
+.table-container {
+    margin-bottom: 60px;
+}
+.table-container h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+thead {
+    background-color: #f7f9fc;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+th {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+tbody tr:hover {
+    background-color: #f7f9fc;
+}
+td a {
+    color: var(--primary-green);
+    font-weight: 600;
+}
+.status-chip {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap; /* Impede que o texto quebre em duas linhas */
+}
+.status-chip.encerrado {
+    background-color: #d9534f; /* Vermelho */
+}
+.status-chip.andamento {
+    background-color: #5bc0de; /* Azul */
+}
+.table-button {
+    background-color: var(--primary-green);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+.table-button:hover {
+    background-color: #00a068;
+    color: #fff;
+}
+
+/* Tabela Responsiva */
+@media screen and (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+    }
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+    td:before {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 600;
+        content: attr(data-label);
+    }
+}
+
+/* --- ADIÇÕES PARA A PÁGINA "CONTATO" --- */
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.contact-info-item {
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    transition: 
+        transform 0.4s ease, 
+        box-shadow 0.4s ease, 
+        border-color 0.4s ease;
+}
+
+.contact-info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-green);
+}
+
+.contact-info-item i {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+}
+.contact-info-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.contact-info-item p {
+    color: #666;
+    line-height: 1.7;
+}
+.contact-info-item a {
+    color: var(--primary-green);
+}
+.contact-info-item a:hover {
+    text-decoration: underline;
+}
+
+.map-container {
+    margin-bottom: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.contact-form-container {
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 40px 12%;
+}
+
+.contact-form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+#contact-form .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+#contact-form .form-group {
+    flex: 1;
+}
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+}
+#contact-form textarea {
+    resize: vertical;
+}
+.form-submit {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsividade para Contato */
+@media (max-width: 768px) {
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+    #contact-form .form-row {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+     #contact-form .form-group {
+        margin-bottom: 20px;
+    }
+}
+/* --- ADIÇÕES PARA A PÁGINA "ESPAÇO DO EMPREENDEDOR" --- */
+
+/* Lista de duas colunas */
+.two-column-list {
+    display: flex;
+    gap: 30px;
+}
+.two-column-list .features-list {
+    flex: 1;
+}
+
+/* Seção de Links Rápidos */
+.quick-links-section {
+    padding: 60px 0;
+}
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.quick-link-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+}
+.quick-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+.quick-link-card i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
+}
+.quick-link-card:hover i {
+    color: var(--orange-accent);
+}
+.quick-link-card span {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Footer específico para a página */
+.footer-petropolis {
+    background-color: var(--dark-bg);
+    color: var(--text-muted);
+    padding-top: 40px;
+    font-size: 0.9rem;
+}
+.footer-petropolis .footer-grid {
+    display: flex;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #444;
+}
+.footer-petropolis h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+.footer-petropolis ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-petropolis li {
+    margin-bottom: 10px;
+}
+.footer-petropolis a:hover {
+    color: var(--primary-green);
+}
+.footer-bottom-bar {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .two-column-list {
+        flex-direction: column;
+        gap: 0;
+    }
+    .footer-petropolis .footer-grid {
+        flex-direction: column;
+    }
+}
+
+/* --- CSS para transformar o mod_banners em um slider visual --- */
+/* --- CSS CORRIGIDO E COMPLETO PARA O SLIDER DO MÓDULO DE BANNERS --- */
+
+/* CSS para o Slider com Fundo Estático */
+
+/* --- CSS CORRIGIDO E COMPLETO PARA O SLIDER DO MÓDULO DE BANNERS --- */
+
+/* 1. O Contêiner Principal (A "Caixa" do Slider) */
+.mod-banners {
+    position: relative; /* ESSENCIAL: Serve como referência para o posicionamento dos filhos */
+    width: 100%;
+    height: 60vh; /* Ajuste a altura conforme necessário */
+    overflow: hidden; /* Garante que nada saia fora da caixa */
+
+    }
+
+/* 2. Cada Slide Individual (A Imagem) */
+.mod-banners__item {
+    /* POSICIONAMENTO: Coloca todos os slides um sobre o outro no mesmo lugar */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* VISIBILIDADE: Esconde todos os slides por padrão */
+    opacity: 0; 
+    
+    /* TRANSIÇÃO: Anima suavemente a mudança de opacidade (o efeito de "fade") */
+    transition: opacity 0.8s ease-in-out; 
+    
+    /* ORDEM: Define uma camada de empilhamento padrão */
+    z-index: 1;
+}
+
+/* 3. O Slide Ativo (O ÚNICO QUE DEVE APARECER) */
+.mod-banners__item.active {
+    /* VISIBILIDADE: Torna APENAS o slide ativo visível */
+    opacity: 1; 
+    
+    /* ORDEM: Garante que o slide ativo fique SEMPRE na frente dos outros */
+    z-index: 2; 
+}
+
+/* 4. Estilo da Imagem Dentro do Slide */
+.mod-banners__item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem cobrir todo o espaço, sem distorcer */
+    object-position: center;
+}
+
+/* 5. Gradiente (Overlay) sobre a imagem */
+.mod-banners__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
+    z-index: 3; /* Fica na frente da imagem, mas atrás de qualquer texto futuro */
+}
+
+/* 6. Estilos dos botões (já devem estar corretos, mas incluídos por garantia) */
+.mod-banners .slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5; /* Na frente de tudo */
+    /* ... outros estilos de cor, tamanho, etc. */
+}
+
+.mod-banners .slider-nav.prev { left: 20px; }
+.mod-banners .slider-nav.next { right: 20px; }
+
+/* 7. Estilos da paginação (pontos) */
+.mod-banners .slider-pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5; /* Na frente de tudo */
+    display: flex;
+    gap: 10px;
+}
+
+.mod-banners__item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 80, 150, 0.35); /* Azul translúcido */
+    z-index: 2.5; /* Entre a imagem (z=1) e o texto ou gradientes (z=3) */
+    pointer-events: none; /* Não interfere em cliques */
+}
+
+.info-section-alt, .programs-grid-section, .info-section, .intro-licitacoes, .contact-section,.tabelas-licitacoes, .messages-section {
+    padding: 40px;
+}

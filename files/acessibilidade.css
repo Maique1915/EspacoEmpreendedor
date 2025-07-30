@@ -1,0 +1,341 @@
+/* ========================================= */
+/* === ESTILOS DE ACESSIBILIDADE PARA JOOMLA === */
+/* ========================================= */
+
+#fixed-accessibility-container .tool-btn {
+    background: transparent;
+    color: var(--text-dark);
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px; /* mantém um tamanho mínimo */
+    height: 30px;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap; /* impede quebra de linha */
+}
+
+#fixed-accessibility-container .tool-btn i {
+    margin-right: 5px;
+}
+
+
+/* Contêiner principal fixo */
+#accessibility-toolbar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: var(--menu); /* cor azul com transparência */
+    color: white;
+    padding: 5px;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-radius: 10px 0 0 10px; /* cantos arredondados no lado esquerdo */
+    backdrop-filter: blur(4px); /* opcional: efeito de vidro fosco */
+}
+
+
+/* Container interno para alinhamento */
+#accessibility-toolbar .container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+
+/* Botões de acessibilidade */
+.accessibility-btn {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.accessibility-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.accessibility-btn i {
+    font-size: 16px;
+}
+/*
+================================================================
+================================================================
+===                                                          ===
+===               CSS PARA ACESSIBILIDADE                    ===
+===                  MODO ALTO CONTRASTE                     ===
+===                                                          ===
+================================================================
+================================================================
+*/
+
+/* 
+  Quando a classe .high-contrast for adicionada ao body, 
+  estas regras serão aplicadas, substituindo as cores originais.
+*/
+
+.high-contrast {
+    /* --- 1. REDEFINIÇÃO DAS VARIÁVEIS GLOBAIS --- */
+    --dark-bg: #000;
+    --header-bg: #000;
+    --primary-green: #ffff00; /* Amarelo vivo para destaque */
+    --primary-gray: #000;
+    --primary-blue: #000;
+    --menu-light: #000;
+    --menu-dark: #fff;
+    --text-light: #fff;
+    --text-dark: #fff;
+    --text-ballon-1: #fff;
+    --text-ballon-2: #000;
+    --text-muted: #fff;
+    --orange-accent: #000;
+    --orange-accent-hover: #000;
+    --border-color: #ffff00; /* Bordas em amarelo para visibilidade */
+    --menu: #000;
+    --balao-1: #000;
+    --balao-2: #ffff00;
+}
+
+/* --- 2. AJUSTES GERAIS --- */
+.high-contrast body,
+.high-contrast .info-section-alt,
+.high-contrast .events-section,
+.high-contrast .sponsors-section,
+.high-contrast .values-section,
+.high-contrast .contact-form-container,
+.high-contrast .program-logos {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* Remove todas as imagens de fundo e gradientes */
+.high-contrast .main-nav-container.container,
+.high-contrast .contact-form-container,
+.high-contrast .cta-section,
+.high-contrast .final-cta,
+.high-contrast .vale-infographic-section,
+.high-contrast .intro-licitacoes,
+.high-contrast .intro-externo,
+.high-contrast .slide::before {
+    background-image: none !important;
+    background: #000 !important;
+}
+
+/* Garante que o slider não tenha filtros de cor */
+.high-contrast .slide::after {
+    background: transparent !important;
+}
+
+
+/* --- 3. CABEÇALHO E NAVEGAÇÃO --- */
+.high-contrast #main-header {
+    background-color: #000 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 2px 5px rgba(255, 255, 0, 0.5) !important;
+    border-bottom: 2px solid #ffff00 !important;
+}
+
+.high-contrast .top-bar,
+.high-contrast .main-nav {
+    background-color: #000 !important;
+}
+
+.high-contrast .main-nav a,
+.high-contrast .top-nav a,
+.high-contrast .mobile-nav-toggle i,
+.high-contrast h2 a {
+    color: #fff !important;
+}
+
+.high-contrast .main-nav a.active,
+.high-contrast .nav-item.active > a,
+.high-contrast .main-nav a:hover,
+.high-contrast .top-nav a:hover,
+.high-contrast h2 a:hover {
+    color: #ffff00 !important;
+}
+
+.high-contrast .main-nav a::after {
+    background-color: #ffff00 !important;
+}
+
+/* --- 4. TEXTOS E TÍTULOS --- */
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4,
+.high-contrast h5,
+.high-contrast h6,
+.high-contrast p,
+.high-contrast span,
+.high-contrast li,
+.high-contrast blockquote,
+.high-contrast strong,
+.high-contrast .program-text p,
+.high-contrast .feature-text p,
+.high-contrast .info-text-full p,
+.high-contrast .item-text p {
+    color: #fff !important;
+    text-shadow: none !important;
+}
+
+.high-contrast .info-text p {
+    color: #000 !important;
+    text-shadow: none !important;
+}
+
+.high-contrast .section-title-wrapper {
+    color: #ffff00 !important;
+}
+
+.high-contrast .section-title-wrapper h2 {
+    border-bottom: 3px solid #ffff00 !important;
+}
+
+.high-contrast .section-subtitle {
+    color: #fff !important;
+}
+
+
+/* --- 5. BOTÕES E LINKS --- */
+.high-contrast .cta-button,
+.high-contrast .slide-button,
+.high-contrast .back-to-top,
+.high-contrast .table-button,
+.high-contrast .timeline-nav-btn {
+    background-color: #ffff00 !important;
+    color: #000 !important;
+    border: 2px solid #ffff00 !important;
+    font-weight: bold;
+}
+
+.high-contrast .cta-button:hover,
+.high-contrast .cta-button.inverted:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-color: #fff !important;
+}
+
+.high-contrast .cta-button.inverted {
+    background-color: #000 !important;
+    color: #ffff00 !important;
+    border: 2px solid #ffff00 !important;
+}
+
+.high-contrast a {
+    color: #ffff00 !important; /* Links em amarelo para se destacarem */
+}
+
+.high-contrast footer .footer-col .mod-menu a:hover {
+  text-decoration: underline;
+}
+
+
+/* --- 6. ELEMENTOS ESPECÍFICOS --- */
+
+/* Formulários */
+.high-contrast .contact-form-container input,
+.high-contrast .contact-form-container textarea,
+.high-contrast #contact-form input,
+.high-contrast #contact-form textarea {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 2px solid #ffff00 !important;
+}
+.high-contrast .contact-form-container input::placeholder,
+.high-contrast .contact-form-container textarea::placeholder {
+    color: #fff !important;
+    opacity: 0.8;
+}
+
+/* Cards */
+.high-contrast .program-card,
+.high-contrast .news-card,
+.high-contrast .quick-link-card,
+.high-contrast .contact-info-item,
+.high-contrast .timeline-card {
+    background-color: #000 !important;
+    border: 2px solid #ffff00 !important;
+    box-shadow: none !important;
+}
+.high-contrast .program-card:hover,
+.high-contrast .news-card:hover,
+.high-contrast .quick-link-card:hover {
+    border-color: #fff !important;
+}
+
+/* Ícones e listas com detalhes de cor */
+.high-contrast .features-list i,
+.high-contrast .values-list li::before,
+.high-contrast .info-text .features-list i,
+.high-contrast .quick-link-card i {
+    color: #ffff00 !important;
+}
+
+/* Balões de Mensagem */
+.high-contrast .message-balloon {
+    background-color: #000 !important;
+    border: 2px solid #ffff00;
+}
+.high-contrast .message-balloon.align-right {
+    background-color: #ffff00 !important;
+    border: none;
+}
+.high-contrast .message-balloon.align-right blockquote,
+.high-contrast .message-balloon.align-right footer {
+    color: #000 !important;
+}
+.high-contrast .message-balloon::after { display: none; } /* Remove as caudas */
+
+/* Tabelas */
+.high-contrast thead {
+    background-color: #333 !important;
+}
+.high-contrast tbody tr {
+    background-color: #1a1a1a !important;
+}
+.high-contrast tbody tr:hover {
+    background-color: #333 !important;
+}
+.high-contrast th,
+.high-contrast td {
+    border-color: #ffff00 !important;
+}
+
+/* Logos */
+.high-contrast .program-logos img,
+.high-contrast .sponsors-grid img {
+    filter: brightness(0) invert(1) !important; /* Inverte as cores para ficarem brancas */
+    opacity: 1 !important;
+}
+
+/* Modal */
+.high-contrast .modal-content {
+    background-color: #000;
+    border: 2px solid #ffff00;
+}
+.high-contrast .modal-header {
+    border-bottom: 1px solid #ffff00;
+}
+.high-contrast .modal-close-btn {
+    color: #fff;
+}
