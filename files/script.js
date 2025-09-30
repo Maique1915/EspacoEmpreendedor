@@ -248,33 +248,42 @@ if (modal) {
                 <a href="https://www.petropolis.rj.gov.br/pmp/index.php/servicos-na-web/fazenda/nota-imperial.html" target="_blank" rel="noopener noreferrer">Acesse aqui o serviço</a>
             `
         },
-        'busca-profissionais': {
-            title: 'Busca de profissionais',
+        'balcao': {
+            title: 'Balcão de emprego',
             content: `
-                <p>A Secretaria de Desenvolvimento Econômico, através do Departamento de Trabalho e Renda, mantém o Balcão de Empregos - banco de currículos – que permite ao cidadão cadastrar seus dados pessoais e sua experiência profissional em um currículo padrão através de um link no site da Prefeitura. Informações detalhadas também podem ser cadastradas pessoalmente no Departamento de Trabalho e Renda.</p>
-                <p><strong>Departamento de Trabalho e Renda</strong><br>Rua Teresa, nº 1515 – Sobreloja • Hipershopping Altos da Serra (ao lado do boliche) • Bairro Alto da Serra – Petrópolis/RJ
-CEP 25635-530 • Telefone: (24) 3114-6893</p>
-                <a href="https://www.petropolis.rj.gov.br/pmp/index.php/servicos-na-web/fazenda/nota-imperial.html" target="_blank" rel="noopener noreferrer">Acesse aqui o serviço</a>
+                <p>O Balcão de Empregos da Prefeitura de Petrópolis é um serviço do Departamento de Trabalho e Renda (Detra) que conecta trabalhadores a oportunidades de emprego na cidade.</p>
+                <h4>Serviços Oferecidos:</h4>
+                <ul>
+                    <li>Cadastro de currículos no sistema do Balcão de Empregos.</li>
+                    <li>Orientação profissional.</li>
+                    <li>Encaminhamento para vagas de emprego disponíveis.</li>
+                </ul>
+                <hr>
+                <p><strong>Onde se cadastrar:</strong><br>
+                O cadastro pode ser feito presencialmente no Departamento de Trabalho e Renda (Detra/Casa do Trabalhador), localizado na Rua Doutor Porciúncula, s/nº, Centro (prédio do Centro Administrativo Frei Antônio Moser, antigo Hipershopping Petrópolis).<br>
+                <strong>Horário:</strong> Segunda a sexta-feira, das 8h às 16h (fechado para almoço de 13h às 14h).</p>
             `
         },
         'mei': {
             title: 'MEI – Microempreendedor Individual',
             content: `
-                <p>O MEI é o pequeno empresário individual que atende as seguintes condições: tem faturamento limitado a R$ 81.000,00 por ano; Não participa, como sócio, administrador ou titular, de outra empresa; Tem, no máximo, um empregado.</p>
+                <p>O MEI é o pequeno empresário individual que atende as seguintes condições:</p>
+                <ul>
+                    <li>Tem faturamento limitado a R$ 81.000,00 por ano;</li>
+                    <li>Não participa como sócio, administrador ou titular de outra empresa;</li>
+                    <li>Tem no máximo, um empregado.</li>
+                </ul>
                 <h4>VANTAGENS EM SER MEI</h4>
                 <ul>
                     <li><strong>COBERTURA DO INSS:</strong> Com o CNPJ, o MEI está coberto pela Previdência com auxílio-doença, aposentadoria por idade ou invalidez e auxílio-maternidade.</li>
                     <li><strong>NOTA FISCAL MEI:</strong> Com o CNPJ, o MEI pode emitir Nota Fiscal Eletrônica.</li>
-                    <li><strong>IMPOSTO FIXO, MENSAL E BARATO:</strong> O MEI paga no máximo R$ 54 por mês de impostos.</li>
+                    <li><strong>IMPOSTO FIXO, MENSAL E BARATO:</strong> O MEI paga 5% do salário mínimo de imposto, valor fixo e mensal.</li>
                     <li><strong>CONTA BANCÁRIA EMPRESARIAL:</strong> Pode ter conta jurídica e solicitar financiamentos.</li>
                     <li><strong>FATURAMENTO MÁXIMO:</strong> Até R$ 6.750/mês (R$ 81 mil por ano).</li>
                     <li><strong>NÃO PRECISA DE CONTADOR:</strong> Controles simplificados.</li>
                     <li><strong>FUNCIONÁRIO DO MEI:</strong> Pode registrar um empregado com tributação reduzida.</li>
                 </ul>
-                <p>Para se formalizar, acesse:</p>
-                <a href="http://www.portaldoempreendedor.gov.br/" target="_blank" rel="noopener noreferrer">www.portaldoempreendedor.gov.br</a>
-                <p>Ou compareça ao Espaço Empreendedor:<br>Rua Teresa, nº 1515 – Sobreloja • Hipershopping Altos da Serra (ao lado do boliche) • Bairro Alto da Serra – Petrópolis/RJ
-CEP 25635-530 • Telefone: (24) 3114-6893.</p>
+                <p>Para se formalizar, compareça ao Espaço Empreendedor:<br>Hipershopping Alto da Serra - Rua Teresa, nº 1515 – Sobreloja - Secretaria de Desenvolvimento Econômico (ao lado do boliche) – Petrópolis/RJ CEP 25635-530 • Telefone: (24) 2242-8750</p>
             `
         }
     };
