@@ -134,6 +134,8 @@
 .high-contrast .vale-infographic-section,
 .high-contrast .intro-licitacoes,
 .high-contrast .intro-externo,
+.high-contrast .programs-grid-section,
+.high-contrast .contact-section,
 .high-contrast .slide::before {
     background-image: none !important;
     background: #000 !important;
